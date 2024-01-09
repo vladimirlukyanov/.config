@@ -107,11 +107,11 @@ tooltip {
 
 
 #image.spacebar {
-	background-image: url("/home/vdawg/.local/share/chezmoi/.other/hyprshaders/spacebar.png");
+	background-image: url("/home/kali/.config/.other/spacebar.png");
 	background-size: contain;
-background-repeat: no-repeat;
-background-position: center;
-	min-width: 200px;
-min-height: 36px;
-margin-top: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+	min-width: 250px;
+  min-height: 50px;
+  margin: 4px 0 0 0;
 }
