@@ -10,7 +10,7 @@
 
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["image#spacebar"],
-	"modules-right": ["custom/random", "cpu", "clock"],
+	"modules-right": ["custom/random", "memory", "cpu", "clock"],
 
 	"cpu": {
 		"interval": 10,
