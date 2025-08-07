@@ -23,15 +23,13 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "plugins" },
-  },
+  spec = "vovka.lazy",
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "darcula-dark" } },
+--  install = { colorscheme = { "darcula-dark" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
 
-vim.cmd.colorscheme("darcula-dark")
+-- vim.cmd.colorscheme("darcula-dark")
+
