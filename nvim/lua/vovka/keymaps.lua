@@ -207,6 +207,10 @@ map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 
+-- Search --
+map("n", "<leader><leader>", function() {
+}, {desc = "Open explorer", remap = true})
+
 -- Neo tree keymaps
 map("n", "<leader>e", function ()
   require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
