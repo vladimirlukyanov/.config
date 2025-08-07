@@ -1,5 +1,9 @@
 local map = vim.keymap.set
 
+
+local project_markers = { ".git", ".project_root", "Makefile", "package.json" } -- Define your project markers
+local current_file_path = vim.api.nvim_buf_get_name(0) -- Get the path of the current buffer's file
+
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -157,7 +161,7 @@ end
 
 -- lazygit
 if vim.fn.executable("lazygit") == 1 then
-  map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit (Root Dir)" })
+  map("n", "<leader>gg", function() vim.fs.root() end, { desc = "Lazygit (Root Dir)" })
   map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
   map("n", "<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
   map("n", "<leader>gl", function() Snacks.picker.git_log({ cwd = LazyVim.root.git() }) end, { desc = "Git Log" })
@@ -216,6 +220,9 @@ end, {desc = "Open explorer", remap = true})
 map("n", "<leader>e", function ()
   require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
 end, {desc = "Explorer NeoTree (Root Dir)", remap = true })
+
+-- Enable line number --
+vim.opt.relativenumber = true
 
 -- Enable displaying of non-printable characters
 vim.opt.list = true
