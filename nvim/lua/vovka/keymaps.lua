@@ -211,9 +211,13 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 
 -- Search --
-map("n", "<leader><leader>", require("fzf-lua").files, {desc = "Open explorer", remap = true})
+map("n", "<leader><leader>", function ()
+	require("fzf-lua").files()
+end, {desc = "Open explorer", remap = true})
 
-map("n", "<leader>sg", require("fzf-lua").live_grep , { silent = true, desc = "Fuzzy complete file" }
+map("n", "<leader>sg", function ()
+	require("fzf-lua").live_grep()
+end, { silent = true, desc = "Fuzzy complete file" }
 )
 
 -- Neo tree keymaps
