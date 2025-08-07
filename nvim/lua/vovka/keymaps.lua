@@ -1,6 +1,5 @@
 local map = vim.keymap.set
 
-
 local project_markers = { ".git", ".project_root", "Makefile", "package.json" } -- Define your project markers
 local current_file_path = vim.api.nvim_buf_get_name(0) -- Get the path of the current buffer's file
 
@@ -212,9 +211,10 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 
 -- Search --
-map("n", "<leader><leader>", function() 
-	---
-end, {desc = "Open explorer", remap = true})
+map("n", "<leader><leader>", require("fzf-lua").files, {desc = "Open explorer", remap = true})
+
+map("n", "<leader>sg", require("fzf-lua").live_grep , { silent = true, desc = "Fuzzy complete file" }
+)
 
 -- Neo tree keymaps
 map("n", "<leader>e", function ()
