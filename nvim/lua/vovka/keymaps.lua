@@ -206,4 +206,22 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
-vim.opt.relativenumber = true
+
+-- Neo tree keymaps
+map("n", "<leader>e", function ()
+  require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+end, {desc = "Explorer NeoTree (Root Dir)", remap = true })
+
+-- Enable displaying of non-printable characters
+vim.opt.list = true
+
+-- Configure how specific whitespace characters are displayed
+vim.opt.listchars = {
+    eol = '¬',    -- End of line character
+    space = '·',  -- Spaces
+    tab = '─>',   -- Tabs (represented by a character and a space)
+    trail = '•',  -- Trailing spaces
+    nbsp = '⎵',   -- Non-breaking spaces
+    extends = '›', -- Character for lines that extend beyond the window
+    precedes = '‹' -- Character for lines that precede the window
+}
