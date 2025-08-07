@@ -208,8 +208,9 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 
 -- Search --
-map("n", "<leader><leader>", function() {
-}, {desc = "Open explorer", remap = true})
+map("n", "<leader><leader>", function() 
+	---
+end, {desc = "Open explorer", remap = true})
 
 -- Neo tree keymaps
 map("n", "<leader>e", function ()
