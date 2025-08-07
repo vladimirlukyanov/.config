@@ -161,7 +161,7 @@ end
 
 -- lazygit
 if vim.fn.executable("lazygit") == 1 then
-  map("n", "<leader>gg", function() vim.fs.root() end, { desc = "Lazygit (Root Dir)" })
+  map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit (Root Dir)" })
   map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
   map("n", "<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
   map("n", "<leader>gl", function() Snacks.picker.git_log({ cwd = LazyVim.root.git() }) end, { desc = "Git Log" })
@@ -218,7 +218,7 @@ end, {desc = "Open explorer", remap = true})
 
 -- Neo tree keymaps
 map("n", "<leader>e", function ()
-  require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+	require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
 end, {desc = "Explorer NeoTree (Root Dir)", remap = true })
 
 -- Enable line number --
